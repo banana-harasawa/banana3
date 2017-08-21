@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_l_2.dtd">
+
+
+<struts-config>
+	<form-beans>
+		<form-bean name="struts_fortuneForm" type="struts.FortuneForm" />
+		<form-bean name="struts_unseiBean" type="struts.UnseiBean" />
+		<form-bean name="struts_omikuji" type="struts.OmikujiForm" />
+	</form-beans>
+
+	<!-- 結果画面への遷移 -->
+	<action-mappings>
+		<action path="/result"
+				type="struts.FortuneAction"
+				name="struts_fortuneForm"
+				scope="request"
+				validate="true"
+				input="/top.jsp">
+			<forward name="result" path="/jsp/result.jsp" />
+		</action>
+	</action-mappings>
+
+	<!-- メッセージ・リソースファイルの指定 -->
+    <message-resources parameter="application"/>
+
+    <!-- Validatorの指定。プロパティpathnamesの値に
+         validator-rules.xmlとvalidation.xmlを指定 -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property property="pathnames"
+                      value="/WEB-INF/validator/validator-rules.xml,/WEB-INF/validator/validation.xml"/>
+    </plug-in>
+
+	<!-- トップ画面への遷移 -->
+	<action-mappings>
+		<action path="/top" type="struts.TopAction" name="struts_fortuneForm"
+			scope="request">
+			<forward name="top" path="/top.jsp" />
+		</action>
+	</action-mappings>
+
+	<!-- 統計1画面への遷移 -->
+
+	<action-mappings>
+		<action path="/toukei1"
+				type="struts.ToukeiAction"
+				name="struts_unseiBean"
+				scope="request">
+			<forward name="toukei1" path="/jsp/toukei1.jsp" />
+		</action>
+	</action-mappings>
+
+	<!-- 統計2画面への遷移 -->
+	<action-mappings>
+		<action path="/toukei2" type="struts.Toukei2Action" name="struts_omikuji"
+			scope="request">
+			<forward name="toukei2" path="/jsp/toukei2.jsp" />
+		</action>
+	</action-mappings>
+
+
+</struts-config>
