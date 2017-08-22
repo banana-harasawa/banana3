@@ -255,12 +255,28 @@
 			</field>
 		</form>
 
-	<form name="struts_fortuneForm">
+		<form name="struts_fortuneForm">
 
 			<field property="birthday" depends="required">
-				<arg key="birthday"/>
-				<arg key="example" />
+				<arg key="birthday" />
 			</field>
+
+			<!-- dateルールの指定 datePattern変数で条件の日時パターンを指定 -->
+			<field property="birthday" depends="date">
+				<arg key="birthday" />
+				<var>
+					<var-name>datePattern</var-name>
+					<var-value>yyyyMMdd</var-value>
+				</var>
+			</field>
+
+			<field property="birthday" depends="mask">
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]{8}$</var-value>
+				</var>
+			</field>
+
 		</form>
 	</formset>
 

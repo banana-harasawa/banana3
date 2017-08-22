@@ -9,11 +9,13 @@
 </head>
 <body>
 
-<html:errors/>
 <span>誕生日を入力してください(例：19990909)</span>
 <form action="result.do" method="post">
-	<input type="text" name="birthday" />
+	<input type="text" name="birthday"/>
 	<input type="submit" value="おみくじを引く"/>
+	<div style="color:red">
+	<html:errors />
+	</div>
 </form>
 </body>
 </html>
