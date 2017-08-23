@@ -1,4 +1,4 @@
-package struts;
+package struts.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,16 +8,15 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-public class TopAction extends Action{
+public class TopAction extends Action {
 	public class LoginAction extends Action {
 
-		public ActionForward execute(ActionMapping mapping,
-				ActionForm form, HttpServletRequest request, HttpServletResponse response){
+		public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+				HttpServletResponse response) {
 
 			return mapping.findForward("top");
 
 		}
-
 
 	}
 }

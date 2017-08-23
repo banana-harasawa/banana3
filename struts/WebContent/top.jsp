@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<span>誕生日を入力してください(例：19990909)</span>
+<span>誕生日を入力してください(例：1999-09-09)</span>
 <form action="result.do" method="post">
 	<input type="text" name="birthday"/>
 	<input type="submit" value="おみくじを引く"/>

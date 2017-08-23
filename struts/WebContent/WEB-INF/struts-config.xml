@@ -5,15 +5,15 @@
 
 <struts-config>
 	<form-beans>
-		<form-bean name="struts_fortuneForm" type="struts.FortuneForm" />
-		<form-bean name="struts_unseiBean" type="struts.UnseiBean" />
-		<form-bean name="struts_omikuji" type="struts.OmikujiForm" />
+		<form-bean name="struts_fortuneForm" type="struts.form.FortuneForm" />
+		<form-bean name="struts_unseiBean" type="struts.dto.UnseiBean" />
+		<form-bean name="struts_omikuji" type="struts.form.OmikujiForm" />
 	</form-beans>
 
 	<!-- Œ‹‰Ê‰æ–Ê‚Ö‚Ì‘JˆÚ -->
 	<action-mappings>
 		<action path="/result"
-				type="struts.FortuneAction"
+				type="struts.action.FortuneAction"
 				name="struts_fortuneForm"
 				scope="request"
 				validate="true"
@@ -34,7 +34,7 @@
 
 	<!-- ƒgƒbƒv‰æ–Ê‚Ö‚Ì‘JˆÚ -->
 	<action-mappings>
-		<action path="/top" type="struts.TopAction" name="struts_fortuneForm"
+		<action path="/top" type="struts.action.TopAction" name="struts_fortuneForm"
 			scope="request">
 			<forward name="top" path="/top.jsp" />
 		</action>
@@ -44,7 +44,7 @@
 
 	<action-mappings>
 		<action path="/toukei1"
-				type="struts.ToukeiAction"
+				type="struts.action.ToukeiAction"
 				name="struts_unseiBean"
 				scope="request">
 			<forward name="toukei1" path="/jsp/toukei1.jsp" />
@@ -53,7 +53,7 @@
 
 	<!-- “Œv2‰æ–Ê‚Ö‚Ì‘JˆÚ -->
 	<action-mappings>
-		<action path="/toukei2" type="struts.Toukei2Action" name="struts_omikuji"
+		<action path="/toukei2" type="struts.action.Toukei2Action" name="struts_omikuji"
 			scope="request">
 			<forward name="toukei2" path="/jsp/toukei2.jsp" />
 		</action>
