@@ -7,7 +7,7 @@ public class DBManager {
 	private static String driverName = "org.postgresql.Driver";
 	private static String url = "jdbc:postgresql://localhost:5432/TEST";
 	private static String user = "postgres";
-	private static String pass = "sinnyuu18551";
+	private static String pass = "banana877";
 
 	public static Connection getConnection() {
 
